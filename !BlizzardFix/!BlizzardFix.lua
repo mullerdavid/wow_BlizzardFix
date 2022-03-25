@@ -1,3 +1,5 @@
+if select(2, GetBuildInfo()) ~= 42917 then return end
+
 local function Trigger(event, ...)
 	local triggers = {GetFramesRegisteredForEvent("UNIT_ATTACK_SPEED")}
 	for _,f in pairs(triggers) do 
