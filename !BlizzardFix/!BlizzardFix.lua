@@ -1,8 +1,8 @@
 local function Trigger(event, ...)
 	local triggers = {GetFramesRegisteredForEvent("UNIT_ATTACK_SPEED")}
 	for _,f in pairs(triggers) do 
-		local t = {f=f}
-		if not issecurevariable(t, "f") then
+		local n = f:GetName()
+		if not n or not issecurevariable(_G, n) then
 			local scr = f:GetScript("OnEvent")
 			if scr then 
 				scr(f, event, ...)
